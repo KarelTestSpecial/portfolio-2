@@ -10,6 +10,7 @@ interface Project {
   link?: string;
   githubLink?: string;
   liveLink?: string;
+  status?: string;
 }
 
 // Define the structure for the categorized projects state
@@ -142,7 +143,7 @@ const Projects: React.FC = () => {
                       {project.githubLink && (
                         <a href={project.githubLink} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
                       )}
-                      {project.liveLink && (
+                      {project.liveLink && project.status === 'active' && (
                         <a href={project.liveLink} className="btn btn-primary ms-2" target="_blank" rel="noopener noreferrer">Live Demo</a>
                       )}
                     </div>

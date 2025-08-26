@@ -11,8 +11,8 @@ Volg deze stappen om je projectdata te beheren via een Google Sheet. Dit maakt h
 
 In de **allereerste rij** van je spreadsheet, voeg de volgende kolomkoppen toe. De volgorde en exacte spelling zijn **zeer belangrijk**.
 
-`type` | `name` | `description` | `link` | `githubLink` | `liveLink`
---- | --- | --- | --- | --- | ---
+`type` | `name` | `description` | `link` | `githubLink` | `liveLink` | `status`
+--- | --- | --- | --- | --- | --- | ---
 
 ### Uitleg van de kolommen:
 
@@ -28,6 +28,7 @@ In de **allereerste rij** van je spreadsheet, voeg de volgende kolomkoppen toe. 
     *   Voor `github` is dit veld niet verplicht, maar kan gebruikt worden als er geen aparte live-link is.
 *   **githubLink**: **Alleen** voor `github` projecten. De link naar de GitHub repository.
 *   **liveLink**: **Alleen** voor `github` projecten. De link naar een live demo van het project.
+*   **status**: (Optioneel) Bepaalt of de "Live Demo" knop getoond wordt. Zet op `active` om de knop te tonen. Elke andere waarde (of een lege cel) verbergt de knop. Dit is handig voor projecten die tijdelijk offline zijn.
 
 ## Stap 3: Publiceer de Spreadsheet op het Web
 
