@@ -30,13 +30,6 @@ const Projects: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Check if the URL is still the placeholder
-    if (googleSheetUrl === 'HIER_JE_LINK_PLAKKEN' || !googleSheetUrl) {
-      setError('De Google Sheet URL is niet geconfigureerd. Volg de stappen in INSTRUCTIONS.md.');
-      setLoading(false);
-      return;
-    }
-
     const fetchAndParseData = () => {
       Papa.parse<Project>(googleSheetUrl, {
         download: true,
