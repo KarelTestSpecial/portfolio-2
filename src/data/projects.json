@@ -1,0 +1,114 @@
+{
+  "chromeExtensions": [
+    {
+      "name": "Zeer Praktische Klok Versie 1.2",
+      "description": "Very Practical Clock Status: Published",
+      "link": "https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn",
+      "githubLink": "https://github.com/KarelTestSpecial/very-practical-clock"
+    },
+    {
+      "name": "Battery Percentage Versie 1.0",
+      "description": "Battery Percentage Status: Published",
+      "link": "https://chromewebstore.google.com/detail/bcknfhofonlfillmlonppglflhgdbeoa",
+      "githubLink": "https://github.com/KarelTestSpecial/battery-percentage"
+    },
+    {
+      "name": "New Tab Organizer 1.1",
+      "description": "",
+      "link": "https://chromewebstore.google.com/detail/new-tab-organizer/llhggelkoodddbgmnmfplcmchbbkkjpk"
+    },
+    {
+      "name": "Google AI Studio - File Reader",
+      "description": "Status: Published",
+      "link": "https://chromewebstore.google.com/detail/google-ai-studio-file-rea/holadmfpcclmpmkdkmcanifihneflfop?authuser=0&hl=en&pli=1",
+      "githubLink": "https://github.com/KarelTestSpecial/aistudioreader"
+    },
+    {
+      "name": "NotebookLM Source Uploader Versie 1.2",
+      "description": "NotebookLM Source Uploader Status: Published",
+      "link": "https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj",
+      "githubLink": "https://github.com/KarelTestSpecial/notebooklm-source-loader"
+    },
+    {
+      "name": "YouTube Playlist Collector",
+      "description": "YouTube Playlist Collector Status: published",
+      "link": "https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-playlist-collector"
+    },
+    {
+      "name": "Youtube Rightclick",
+      "description": "Youtube RightClick Status: published",
+      "link": "https://chromewebstore.google.com/detail/youtube-rightclick/dceebkineaajkfponfimilfebkgbcchh",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-rightclick-csv"
+    },
+    {
+      "name": "Lean Window",
+      "description": "Status: Pending review",
+      "link": ""
+    }
+  ],
+  "githubProjects": [
+    {
+      "name": "URL-pulse",
+      "description": "A GitHub Actions-powered monitoring tool that checks and reports on the status of URLs.",
+      "githubLink": "https://github.com/KarelTestSpecial/url-pulse",
+      "liveLink": "https://kareltestspecial.github.io/url-pulse/",
+      "status": "active"
+    },
+    {
+      "name": "Newtab Startpage Dashboard",
+      "description": "",
+      "githubLink": "https://github.com/KarelTestSpecial/startpage"
+    },
+    {
+      "name": "Custom Data Tree",
+      "description": "",
+      "githubLink": "https://github.com/KarelTestSpecial/custom-data-tree/",
+      "liveLink": "https://kareltestspecial.github.io/custom-data-tree/",
+      "status": "active"
+    },
+    {
+      "name": "Longevity Food Health data tree",
+      "description": "",
+      "githubLink": "https://github.com/KarelTestSpecial/LFH/blob/main/",
+      "liveLink": "https://kareltestspecial.github.io/LFH/",
+      "status": "active"
+    },
+    {
+      "name": "Link-in-bio-Hub",
+      "description": "A web application built with Firebase for centralizing social media links.",
+      "githubLink": "https://github.com/KarelTestSpecial/link-in-bio-hub-repo",
+      "liveLink": "https://linkinbiohub.web.app",
+      "status": "active"
+    },
+    {
+      "name": "YouTube Playlist 2-Way Collector Versie 2.0",
+      "description": "",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-2way-collector"
+    },
+    {
+      "name": "OCR combi",
+      "description": "An add-on to combine and improve the output of different OCR services.",
+      "githubLink": "https://github.com/KarelTestSpecial/ocr-combi-addon"
+    },
+    {
+      "name": "Vegan BioTech Report: profdrkdc",
+      "description": "An automated report that collects and presents data, running on GitHub Actions.",
+      "githubLink": "https://github.com/profdrkdc/Vegan-BioTech-Report",
+      "liveLink": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
+      "status": "active"
+    }
+  ],
+  "websites": [
+    {
+      "name": "Portfolio",
+      "description": "My personal portfolio website.",
+      "link": "https://kareltestspecial.github.io/portfolio/"
+    },
+    {
+      "name": "AutiWiki",
+      "description": "",
+      "link": "http://autiwiki.com"
+    }
+  ]
+}
