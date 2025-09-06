@@ -1,4 +1,5 @@
 import React from 'react';
+import cvData from '../data/cv.json';
 
 const About: React.FC = () => {
   return (
@@ -6,58 +7,62 @@ const About: React.FC = () => {
       <div className="container">
         <h2>Curriculum Vitae</h2>
         <div className="row">
+          <div className="col-md-12">
+            <p>{cvData.profile}</p>
+            <p><em>{cvData.notice}</em></p>
+          </div>
+        </div>
+        <div className="row">
           <div className="col-md-6">
             <h4>Contactgegevens</h4>
             <ul className="list-unstyled">
-              <li><strong>Naam:</strong> Karel DECHERF</li>
-              <li><strong>Adres:</strong> Hurstweg 9, 9000 Gent</li>
-              <li><strong>GSM:</strong> +(0)474 100 352</li>
-              <li><strong>Email:</strong> karel.decherf@gmail.com</li>
-              <li><strong>Geboortedatum:</strong> 08/16/1974</li>
-              <li><strong>Nationaliteit:</strong> Belg</li>
+              <li><strong>Naam:</strong> {cvData.name}</li>
+              <li><strong>Adres:</strong> {cvData.contact.address}</li>
+              <li><strong>Email:</strong> <a href={`mailto:${cvData.contact.email}`}>{cvData.contact.email}</a></li>
+              <li><strong>LinkedIn:</strong> <a href={`https://${cvData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{cvData.contact.linkedin}</a></li>
+              <li><strong>GitHub:</strong> <a href={`https://${cvData.contact.github}`} target="_blank" rel="noopener noreferrer">{cvData.contact.github}</a></li>
             </ul>
           </div>
           <div className="col-md-6">
             <h4>Werkervaring</h4>
             <ul className="list-unstyled">
-              <li><strong>2022-2024:</strong> FPC: kok</li>
-              <li><strong>2009-2011:</strong> De Haven: klerenhersteller</li>
-              <li><strong>2008:</strong> Paviljoen C: keukenhulp</li>
-              <li><strong>2007-2008:</strong> Pasec: fabrieksarbeider</li>
-              <li><strong>2001-2002:</strong> Visitronics: programmeur, webdesigner</li>
-              <li><strong>1995-1998:</strong> Ikea: magazijnier</li>
-              <li><strong>1996-1997:</strong> Pizza City: koerier</li>
-              <li><strong>1994-1995:</strong> Sodexo: keukenhulp</li>
+              {cvData.workExperience.map((job, index) => (
+                <li key={index}>
+                  <strong>{job.period}: {job.role}</strong> - {job.company}
+                  {job.description && <p>{job.description}</p>}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
         <div className="row mt-4">
           <div className="col-md-6">
-            <h4>Vorming</h4>
+            <h4>Opleidingen</h4>
             <ul className="list-unstyled">
-              <li><strong>2011-2012:</strong> Open Universiteit - Inleiding tot de Psychologie</li>
-              <li><strong>1998-2001:</strong> GOCI - Informatica Programmeur/Webdesigner A1</li>
-              <li><strong>1993-1995:</strong> KIH Denayer - Industriële Hogeschool - 1e kand. cum laude</li>
-              <li><strong>1992-1994:</strong> KULeuven - Hoger Instituut voor de Wijsbegeerte</li>
+              {cvData.education.map((edu, index) => (
+                <li key={index}>
+                  <strong>{edu.year}: {edu.degree}</strong> - {edu.institution}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="col-md-6">
             <h4>Skills</h4>
-            <p><strong>AI:</strong> Jules 2.0, Firebase Studio, Google AI Studio, Google Colab</p>
-            <p><strong>Software:</strong> MS Office, Open Office, Google Workspace, Windows, Linux, Chrome</p>
+            <p><strong>AI & Automatisering:</strong> {cvData.skills.ai_automation}</p>
+            <p><strong>Programmeertalen & Frameworks:</strong> {cvData.skills.programming_frameworks}</p>
+            <p><strong>Web & Databases:</strong> {cvData.skills.web_databases}</p>
+            <p><strong>Software & IDEs:</strong> {cvData.skills.software_ides}</p>
+            <p><strong>Webdesign:</strong> {cvData.skills.web_design}</p>
+            <p><strong>Besturingssystemen:</strong> {cvData.skills.operating_systems}</p>
+            <p><strong>Netwerkprotocollen:</strong> {cvData.skills.network_protocols}</p>
             <h4>Talen</h4>
             <ul className="list-unstyled">
-              <li><strong>Nederlands:</strong> Moedertaal</li>
-              <li><strong>English:</strong> Fluent</li>
-              <li><strong>Français:</strong> Normale</li>
-              <li><strong>Deutsch:</strong> Anfänger</li>
-              <li><strong>Spaans:</strong> Noçiones</li>
+              {cvData.languages.map((lang, index) => (
+                <li key={index}><strong>{lang.language}:</strong> {lang.proficiency}</li>
+              ))}
             </ul>
-            <h4>Bijzonderheden</h4>
-            <ul className="list-unstyled">
-                <li><strong>Neurotypologie:</strong> Autisme Spectrum Stoornis</li>
-                <li><strong>IQ:</strong> 126</li>
-            </ul>
+            <h4>Vervoer</h4>
+            <p>{cvData.transport}</p>
           </div>
         </div>
       </div>

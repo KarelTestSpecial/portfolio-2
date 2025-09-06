@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Papa from 'papaparse';
-import { googleSheetUrl } from '../config';
+import React from 'react';
+import projectsData from '../data/projects.json';
 
-// Define the structure of a project based on the Google Sheet columns
 interface Project {
-  type: 'chrome' | 'github' | 'website' | string; // type can be one of these or any string
   name: string;
   description: string;
   link?: string;
@@ -13,87 +10,8 @@ interface Project {
   status?: string;
 }
 
-// Define the structure for the categorized projects state
-interface CategorizedProjects {
-  chromeExtensions: Project[];
-  githubProjects: Project[];
-  websites: Project[];
-}
-
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<CategorizedProjects>({
-    chromeExtensions: [],
-    githubProjects: [],
-    websites: [],
-  });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchAndParseData = () => {
-      Papa.parse<Project>(googleSheetUrl, {
-        download: true,
-        header: true,
-        complete: (results) => {
-          const categorized: CategorizedProjects = {
-            chromeExtensions: [],
-            githubProjects: [],
-            websites: [],
-          };
-
-          // Filter out any empty rows Papa might parse
-          const validData = results.data.filter(row => row.name);
-
-          validData.forEach((row) => {
-            switch (row.type) {
-              case 'chrome':
-                categorized.chromeExtensions.push(row);
-                break;
-              case 'github':
-                categorized.githubProjects.push(row);
-                break;
-              case 'website':
-                categorized.websites.push(row);
-                break;
-              default:
-                break;
-            }
-          });
-
-          setProjects(categorized);
-          setLoading(false);
-        },
-        error: (err) => {
-          setError(`Fout bij het ophalen of parsen van de data: ${err.message}`);
-          setLoading(false);
-        },
-      });
-    };
-
-    fetchAndParseData();
-  }, []);
-
-  if (loading) {
-    return (
-      <section id="projects" className="py-5 bg-light">
-        <div className="container">
-          <h2>My Projects</h2>
-          <p>Laden...</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="projects" className="py-5 bg-light">
-        <div className="container">
-          <h2>My Projects</h2>
-          <div className="alert alert-danger">{error}</div>
-        </div>
-      </section>
-    );
-  }
+  const { chromeExtensions, githubProjects, websites } = projectsData;
 
   return (
     <section id="projects" className="py-5 bg-light">
@@ -101,11 +19,11 @@ const Projects: React.FC = () => {
         <h2>My Projects</h2>
         <hr />
 
-        {projects.chromeExtensions.length > 0 && (
+        {chromeExtensions.length > 0 && (
           <>
             <h3>Chrome Extensions</h3>
             <div className="row">
-              {projects.chromeExtensions.map((project, index) => (
+              {chromeExtensions.map((project, index) => (
                 <div className="col-md-4" key={index}>
                   <div className="card mb-4 shadow-sm">
                     <div className="card-body">
@@ -113,6 +31,9 @@ const Projects: React.FC = () => {
                       <p className="card-text">{project.description}</p>
                       {project.link && (
                         <a href={project.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Extension</a>
+                      )}
+                      {project.githubLink && (
+                        <a href={project.githubLink} className="btn btn-secondary ms-2" target="_blank" rel="noopener noreferrer">GitHub</a>
                       )}
                     </div>
                   </div>
@@ -123,11 +44,11 @@ const Projects: React.FC = () => {
           </>
         )}
 
-        {projects.githubProjects.length > 0 && (
+        {githubProjects.length > 0 && (
           <>
             <h3>GitHub Projects</h3>
             <div className="row">
-              {projects.githubProjects.map((project, index) => (
+              {githubProjects.map((project, index) => (
                 <div className="col-md-4" key={index}>
                   <div className="card mb-4 shadow-sm">
                     <div className="card-body">
@@ -136,7 +57,7 @@ const Projects: React.FC = () => {
                       {project.githubLink && (
                         <a href={project.githubLink} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
                       )}
-                      {project.liveLink && project.status === 'active' && (
+                      {project.liveLink && (
                         <a href={project.liveLink} className="btn btn-primary ms-2" target="_blank" rel="noopener noreferrer">Live Demo</a>
                       )}
                     </div>
@@ -148,11 +69,11 @@ const Projects: React.FC = () => {
           </>
         )}
 
-        {projects.websites.length > 0 && (
+        {websites.length > 0 && (
           <>
             <h3>Websites</h3>
             <div className="row">
-              {projects.websites.map((website, index) => (
+              {websites.map((website, index) => (
                 <div className="col-md-4" key={index}>
                   <div className="card mb-4 shadow-sm">
                     <div className="card-body">
