@@ -1,15 +1,6 @@
 import React from 'react';
 import projectsData from '../data/projects.json';
 
-interface Project {
-  name: string;
-  description: string;
-  link?: string;
-  githubLink?: string;
-  liveLink?: string;
-  status?: string;
-}
-
 const Projects: React.FC = () => {
   const { chromeExtensions, githubProjects, websites } = projectsData;
 
