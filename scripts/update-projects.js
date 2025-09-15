@@ -51,10 +51,9 @@ function parseTsv(tsvData) {
 
   const nameIndex = headers.indexOf('Product/Project Naam');
   const typeIndex = headers.indexOf('Type Product');
-  const urlIndex = headers.indexOf('URL(s)');
   const sourceIndex = headers.indexOf('Source Code Locatie');
   const liveUrlIndex = headers.indexOf('Live URL');
-  const liveStatusIndex = headers.indexOf('Live'); // New column
+  const liveStatusIndex = headers.indexOf('Live');
   const useCaseIndex = headers.indexOf('Use-Case');
 
   if (nameIndex === -1 || typeIndex === -1 || liveStatusIndex === -1) {
@@ -68,9 +67,7 @@ function parseTsv(tsvData) {
     return {
       name: fullValues[nameIndex],
       type: fullValues[typeIndex] || 'Project',
-      link: fullValues[urlIndex],
       githubLink: fullValues[sourceIndex],
-      // Conditional logic for liveLink
       liveLink: fullValues[liveStatusIndex].toUpperCase() === 'TRUE' ? fullValues[liveUrlIndex] : '',
       description: fullValues[useCaseIndex] || `A project by ${fullValues[headers.indexOf('GitHub Account')] || 'Karel'}.`
     };

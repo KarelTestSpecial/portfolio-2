@@ -2,58 +2,48 @@
 
 This is a personal portfolio website built with React to showcase projects and professional information. The website is live and deployed via GitHub Pages.
 
-## Managing Content
+## How to Update the Website
 
-The content of this website is managed through data files, making it easy to update without touching the layout code.
+The website content is managed through a Google Sheet. To update the site with the latest projects and deploy it, follow these steps.
 
-### Updating the Project List
-
-The list of projects is sourced from a Google Sheet. A custom script fetches the data from this sheet and generates the required `src/data/projects.json` file.
-
-To update the projects on the website, follow these steps:
-
-1.  **Edit the Google Sheet**: Make all your changes, additions, or removals in the project's designated Google Sheet.
-2.  **Run the Update Script**: In your local project terminal, run the following command:
-    ```bash
-    npm run update-projects
-    ```
-    This command fetches the latest data from the sheet and rebuilds the `src/data/projects.json` file.
-
-## Development and Deployment
-
-Instructions for setting up and deploying the project.
-
-### 1. Installation
-
+### 1. Installation (Only needs to be done once)
 Before you can run any commands, you need to install the project's dependencies.
 ```bash
 npm install
 ```
 
-### 2. Available Scripts
+### 2. Update Content
+Make all your changes, additions, or removals to the projects in the designated **Google Sheet**.
 
-Once the installation is complete, you can use the following scripts:
+### 3. Update and Deploy
+To publish your changes to the live website, run the following single command in your terminal:
+```bash
+npm run update-and-deploy
+```
+This command automatically performs two actions in sequence:
+1.  **Updates Data**: It fetches the latest project list from the Google Sheet and rebuilds the local `src/data/projects.json` file.
+2.  **Deploys Website**: It then builds a production version of the website and deploys it to GitHub Pages.
+
+It can take a few minutes for the changes to become visible on the live URL.
+
+---
+
+## Advanced Scripts
+
+The following scripts are also available for more specific tasks.
 
 **`npm start`**
 
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload when you make edits.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it locally.
 
 **`npm run update-projects`**
 
-As described above, this script updates your project list from the Google Sheet.
+Only updates the project list from the Google Sheet without deploying. Useful for checking the data locally before publishing.
+
+**`npm run deploy`**
+
+Only deploys the website with the current local data. Use this if you have already updated the project data and just want to re-deploy.
 
 **`npm test`**
 
-Launches the test runner to check for any errors.
-
-**`npm run build`**
-
-Builds a production-ready version of the app into the `build` folder. This step is automatically done when you deploy.
-
-### 3. Deploying to GitHub Pages
-
-To publish your latest changes (including any updated project data) to the live website, run the deploy command:
-```bash
-npm run deploy
-```
-This command first builds the project and then pushes the contents of the `build` folder to the `gh-pages` branch on GitHub, making your changes live. It can take a few minutes for the changes to become visible.
+Launches the test runner.
