@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal portfolio website built with React to showcase projects and professional information. The website is live and deployed via GitHub Pages.
 
-## Available Scripts
+## How to Update the Website
 
-In the project directory, you can run:
+The website content is managed through a Google Sheet. To update the site with the latest projects and deploy it, follow these steps.
 
-### `npm start`
+### 1. Installation (Only needs to be done once)
+Before you can run any commands, you need to install the project's dependencies.
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. Update Content
+Make all your changes, additions, or removals to the projects in the designated **Google Sheet**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 3. Update and Deploy
+To publish your changes to the live website, run the following single command in your terminal:
+```bash
+npm run update-and-deploy
+```
+This command automatically performs two actions in sequence:
+1.  **Updates Data**: It fetches the latest project list from the Google Sheet and rebuilds the local `src/data/projects.json` file.
+2.  **Deploys Website**: It then builds a production version of the website and deploys it to GitHub Pages.
 
-### `npm test`
+It can take a few minutes for the changes to become visible on the live URL.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Advanced Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following scripts are also available for more specific tasks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**`npm start`**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it locally.
 
-### `npm run eject`
+**`npm run update-projects`**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Only updates the project list from the Google Sheet without deploying. Useful for checking the data locally before publishing.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**`npm run deploy`**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Only deploys the website with the current local data. Use this if you have already updated the project data and just want to re-deploy.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**`npm test`**
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Launches the test runner.
