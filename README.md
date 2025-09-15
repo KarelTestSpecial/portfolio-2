@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal portfolio website built with React to showcase projects and professional information. The website is live and deployed via GitHub Pages.
 
-## Available Scripts
+## Managing Content
 
-In the project directory, you can run:
+The content of this website is managed through data files, making it easy to update without touching the layout code.
 
-### `npm start`
+### Updating the Project List
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The list of projects is sourced from a Google Sheet. A custom script fetches the data from this sheet and generates the required `src/data/projects.json` file.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To update the projects on the website, follow these steps:
 
-### `npm test`
+1.  **Edit the Google Sheet**: Make all your changes, additions, or removals in the project's designated Google Sheet.
+2.  **Run the Update Script**: In your local project terminal, run the following command:
+    ```bash
+    npm run update-projects
+    ```
+    This command fetches the latest data from the sheet and rebuilds the `src/data/projects.json` file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development and Deployment
 
-### `npm run build`
+Instructions for setting up and deploying the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before you can run any commands, you need to install the project's dependencies.
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Available Scripts
 
-### `npm run eject`
+Once the installation is complete, you can use the following scripts:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**`npm start`**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload when you make edits.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**`npm run update-projects`**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+As described above, this script updates your project list from the Google Sheet.
 
-## Learn More
+**`npm test`**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Launches the test runner to check for any errors.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**`npm run build`**
+
+Builds a production-ready version of the app into the `build` folder. This step is automatically done when you deploy.
+
+### 3. Deploying to GitHub Pages
+
+To publish your latest changes (including any updated project data) to the live website, run the deploy command:
+```bash
+npm run deploy
+```
+This command first builds the project and then pushes the contents of the `build` folder to the `gh-pages` branch on GitHub, making your changes live. It can take a few minutes for the changes to become visible.
