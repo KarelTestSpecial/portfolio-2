@@ -1,13 +1,6 @@
 {
   "chromeExtensions": [
     {
-      "name": "Zeer Praktische Klok",
-      "link": "https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn",
-      "githubLink": "https://github.com/KarelTestSpecial/very-practical-clock",
-      "liveLink": "https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn?hl=en-US&utm_source=ext_sidebar",
-      "description": "Praktische tool"
-    },
-    {
       "name": "Battery Percentage",
       "link": "https://chromewebstore.google.com/detail/bcknfhofonlfillmlonppglflhgdbeoa",
       "githubLink": "https://github.com/KarelTestSpecial/battery-percentage",
@@ -15,25 +8,11 @@
       "description": "Praktische tool"
     },
     {
-      "name": "NotebookLM Source Uploader",
-      "link": "https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj",
-      "githubLink": "https://github.com/KarelTestSpecial/notebooklm-source-loader",
-      "liveLink": "https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj",
-      "description": "Kennisbeheer, Productiviteit"
-    },
-    {
-      "name": "Youtube Rightclick",
+      "name": "Google AI Studio - File Reader",
       "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/youtube-rightclick-csv",
-      "liveLink": "https://chromewebstore.google.com/detail/youtube-rightclick/dceebkineaajkfponfimilfebkgbcchh",
-      "description": "Media"
-    },
-    {
-      "name": "YouTube Playlist CSV",
-      "link": "https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde",
-      "githubLink": "https://github.com/KarelTestSpecial/youtube-playlist-csv",
-      "liveLink": "https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde",
-      "description": "Media"
+      "githubLink": "https://github.com/KarelTestSpecial/aistudioreader",
+      "liveLink": "https://chromewebstore.google.com/detail/google-ai-studio-file-rea/holadmfpcclmpmkdkmcanifihneflfop?authuser=0&hl=en&pli=1",
+      "description": "A project by Karel."
     },
     {
       "name": "Lean Window",
@@ -50,42 +29,35 @@
       "description": "A project by Karel."
     },
     {
-      "name": "Google AI Studio - File Reader",
+      "name": "NotebookLM Source Uploader",
+      "link": "https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj",
+      "githubLink": "https://github.com/KarelTestSpecial/notebooklm-source-loader",
+      "liveLink": "https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj",
+      "description": "Kennisbeheer, Productiviteit"
+    },
+    {
+      "name": "YouTube Playlist CSV",
+      "link": "https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-playlist-csv",
+      "liveLink": "https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde",
+      "description": "Media"
+    },
+    {
+      "name": "Youtube Rightclick",
       "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/aistudioreader",
-      "liveLink": "https://chromewebstore.google.com/detail/google-ai-studio-file-rea/holadmfpcclmpmkdkmcanifihneflfop?authuser=0&hl=en&pli=1",
-      "description": "A project by Karel."
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-rightclick-csv",
+      "liveLink": "https://chromewebstore.google.com/detail/youtube-rightclick/dceebkineaajkfponfimilfebkgbcchh",
+      "description": "Media"
+    },
+    {
+      "name": "Zeer Praktische Klok",
+      "link": "https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn",
+      "githubLink": "https://github.com/KarelTestSpecial/very-practical-clock",
+      "liveLink": "https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn?hl=en-US&utm_source=ext_sidebar",
+      "description": "Praktische tool"
     }
   ],
   "githubProjects": [
-    {
-      "name": "YouTube Playlist Collector",
-      "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/youtube-playlist-collector",
-      "liveLink": "",
-      "description": "Media"
-    },
-    {
-      "name": "OCR combi",
-      "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/ocr-combi-addon",
-      "liveLink": "",
-      "description": "OCR, Development"
-    },
-    {
-      "name": "YouTube Playlist 2-Way Collector",
-      "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/youtube-2way-collector",
-      "liveLink": "",
-      "description": "Media"
-    },
-    {
-      "name": "URL-pulse",
-      "link": "",
-      "githubLink": "https://github.com/KarelTestSpecial/url-pulse/tree/url-pulse-app",
-      "liveLink": "",
-      "description": "A project by Karel."
-    },
     {
       "name": "Custom Data Tree",
       "link": "",
@@ -120,16 +92,37 @@
       "githubLink": "https://github.com/KarelTestSpecial/variaGDriveAddons",
       "liveLink": "",
       "description": "A project by Karel."
+    },
+    {
+      "name": "OCR combi",
+      "link": "",
+      "githubLink": "https://github.com/KarelTestSpecial/ocr-combi-addon",
+      "liveLink": "",
+      "description": "OCR, Development"
+    },
+    {
+      "name": "URL-pulse",
+      "link": "",
+      "githubLink": "https://github.com/KarelTestSpecial/url-pulse/tree/url-pulse-app",
+      "liveLink": "",
+      "description": "A project by Karel."
+    },
+    {
+      "name": "YouTube Playlist 2-Way Collector",
+      "link": "",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-2way-collector",
+      "liveLink": "",
+      "description": "Media"
+    },
+    {
+      "name": "YouTube Playlist Collector",
+      "link": "",
+      "githubLink": "https://github.com/KarelTestSpecial/youtube-playlist-collector",
+      "liveLink": "",
+      "description": "Media"
     }
   ],
   "websites": [
-    {
-      "name": "Vegan BioTech Report",
-      "link": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
-      "githubLink": "https://github.com/profdrkdc/Vegan-BioTech-Report",
-      "liveLink": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
-      "description": "Informatie, Rapportage"
-    },
     {
       "name": "Link-in-bio-Hub",
       "link": "https://link-in-bio-fbase-project.web.app",
@@ -145,13 +138,6 @@
       "description": "Community, Informatie"
     },
     {
-      "name": "Portfolio",
-      "link": "",
-      "githubLink": "https://kareltestspecial.github.io/portfolio/",
-      "liveLink": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
-      "description": "A project by Karel."
-    },
-    {
       "name": "LFH",
       "link": "",
       "githubLink": "https://github.com/KarelTestSpecial/LFH/blob/main/",
@@ -164,6 +150,20 @@
       "githubLink": "https://github.com/KarelTestSpecial/LFH-nl",
       "liveLink": "https://kareltestspecial.github.io/LFH-nl/",
       "description": "A project by Karel."
+    },
+    {
+      "name": "Portfolio",
+      "link": "",
+      "githubLink": "https://kareltestspecial.github.io/portfolio/",
+      "liveLink": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
+      "description": "A project by Karel."
+    },
+    {
+      "name": "Vegan BioTech Report",
+      "link": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
+      "githubLink": "https://github.com/profdrkdc/Vegan-BioTech-Report",
+      "liveLink": "https://profdrkdc.github.io/Vegan-BioTech-Report/",
+      "description": "Informatie, Rapportage"
     }
   ]
 }

@@ -12,7 +12,6 @@ const options = {
 };
 
 https.get(url, options, (res) => {
-  // Handle redirects
   if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
     https.get(res.headers.location, options, (redirectRes) => {
       processResponse(redirectRes);
@@ -22,7 +21,6 @@ https.get(url, options, (res) => {
     return;
   }
   processResponse(res);
-
 }).on('error', (e) => {
   console.error(`Got error: ${e.message}`);
 });
@@ -43,7 +41,6 @@ function processResponse(res) {
     });
 }
 
-
 function parseTsv(tsvData) {
   if (tsvData.charCodeAt(0) === 0xFEFF) {
     tsvData = tsvData.slice(1);
@@ -57,10 +54,11 @@ function parseTsv(tsvData) {
   const urlIndex = headers.indexOf('URL(s)');
   const sourceIndex = headers.indexOf('Source Code Locatie');
   const liveUrlIndex = headers.indexOf('Live URL');
+  const liveStatusIndex = headers.indexOf('Live'); // New column
   const useCaseIndex = headers.indexOf('Use-Case');
 
-  if (nameIndex === -1 || typeIndex === -1) {
-      throw new Error('Required headers "Product/Project Naam" or "Type Product" not found.');
+  if (nameIndex === -1 || typeIndex === -1 || liveStatusIndex === -1) {
+      throw new Error('Required headers "Product/Project Naam", "Type Product", or "Live" not found.');
   }
 
   return rows.map(row => {
@@ -72,7 +70,8 @@ function parseTsv(tsvData) {
       type: fullValues[typeIndex] || 'Project',
       link: fullValues[urlIndex],
       githubLink: fullValues[sourceIndex],
-      liveLink: fullValues[liveUrlIndex],
+      // Conditional logic for liveLink
+      liveLink: fullValues[liveStatusIndex].toUpperCase() === 'TRUE' ? fullValues[liveUrlIndex] : '',
       description: fullValues[useCaseIndex] || `A project by ${fullValues[headers.indexOf('GitHub Account')] || 'Karel'}.`
     };
   }).filter(p => p && p.name);
