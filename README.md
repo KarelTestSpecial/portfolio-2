@@ -13,7 +13,7 @@ npm install
 ```
 
 ### 2. Update Content
-Make all your changes, additions, or removals to the projects in the designated **Google Sheet**.
+Make all your changes, additions, or removals to the projects in the designated **[Google Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQzIVbzK4ypdzPzP6piHAXf3LvYTuFqRJ2hixI4GNF75hfSWjeWEOKFUbj6S8JwHiH76azirz2BsHTI/pub?gid=0&single=true&output=tsv)**.
 
 ### 3. Update and Deploy
 To publish your changes to the live website, run the following single command in your terminal:
