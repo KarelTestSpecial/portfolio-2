@@ -27,13 +27,13 @@
       "role": "Webontwikkelaar",
       "company": "Visitronics NV, Leuven",
       "period": "01/2001 – 08/2001",
-      "description": "Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten. Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen."
+      "description": " Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten. Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen."
     },
     {
       "role": "Magazijnier",
       "company": "IKEA, Ternat",
       "period": "03/1998 – 01/2001",
-      "description": "Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen. Optimaliseren van de magazijnwerking voor maximale efficiëntie."
+      "description": " Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen. Optimaliseren van de magazijnwerking voor maximale efficiëntie."
     },
     {
       "role": "Diverse rollen (o.a. Koerier, Uitzendkracht, Keukenhulp, Tele-enquêteur)",
@@ -49,13 +49,13 @@
     }
   ],
   "skills": {
-    "ai_automation": "Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy",
-    "programming_frameworks": "JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core",
+    "ai_automatisering": "Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy",
+    "programmeertalen_frameworks": "JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core",
     "web_databases": "React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase, Supabase, PostgreSQL, MySQL",
     "software_ides": "VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google Workspace, MS Office, Odoo, Notion",
-    "web_design": "Figma, Canva, Photoshop, Wordpress, Wix",
-    "operating_systems": "Windows, Linux, ChromeOS",
-    "network_protocols": "IIS, WINS, DHCP, DNS"
+    "webdesign": "Figma, Canva, Photoshop, Wordpress, Wix",
+    "besturingssystemen": "Windows, Linux, ChromeOS",
+    "netwerkprotocollen": "IIS, WINS, DHCP, DNS"
   },
   "education": [
     {
