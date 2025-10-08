@@ -26,6 +26,8 @@ This command automatically performs two actions in sequence:
 
 It can take a few minutes for the changes to become visible on the live URL.
 
+> **Note:** This command is not a file, but a script defined in `package.json`. It automates the process by running the `update-projects` and `deploy` scripts in sequence.
+
 ---
 
 ## Advanced Scripts
