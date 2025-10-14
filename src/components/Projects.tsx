@@ -13,9 +13,9 @@ const Projects: React.FC = () => {
         {chromeExtensions.length > 0 && (
           <>
             <h3>Chrome Extensions</h3>
-            <div className="row g-4">
+            <div className="row g-4 row-cols-1 row-cols-md-3">
               {chromeExtensions.map((project, index) => (
-                <div className="col-md-4 d-flex align-items-stretch" key={index}>
+                <div className="col d-flex align-items-stretch" key={index}>
                   <div className="card shadow-sm h-100">
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{project.name}</h5>
@@ -40,9 +40,9 @@ const Projects: React.FC = () => {
         {githubProjects.length > 0 && (
           <>
             <h3>GitHub Projects</h3>
-            <div className="row g-4">
+            <div className="row g-4 row-cols-1 row-cols-md-3">
               {githubProjects.map((project, index) => (
-                <div className="col-md-4 d-flex align-items-stretch" key={index}>
+                <div className="col d-flex align-items-stretch" key={index}>
                   <div className="card shadow-sm h-100">
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{project.name}</h5>
@@ -67,9 +67,9 @@ const Projects: React.FC = () => {
         {websites.length > 0 && (
           <>
             <h3>Websites</h3>
-            <div className="row g-4">
+            <div className="row g-4 row-cols-1 row-cols-md-3">
               {websites.map((website, index) => (
-                <div className="col-md-4 d-flex align-items-stretch" key={index}>
+                <div className="col d-flex align-items-stretch" key={index}>
                   <div className="card shadow-sm h-100">
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{website.name}</h5>
