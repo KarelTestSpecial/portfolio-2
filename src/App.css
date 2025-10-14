@@ -1,1 +1,8 @@
 
+#projects .card .card-title {
+  overflow-wrap: break-word;
+}
+
+#projects .card {
+  width: 100%;
+}
