@@ -80,7 +80,7 @@ Driven and analytical IT professional with a lifelong passion for programming an
 
 ### **Recent Projects**
 
-A selection of personal projects that illustrate my current technical skills. For a complete overview of all my work, including live demos and source code, you can **visit my portfolio website: [kareltestspecial.github.io/portfolio/](https://kareltestspecial.github.io/portfolio/)**
+A selection of personal projects that illustrate my current technical skills. For a complete overview of all my work, including live demos and source code, click **[here](https://kareltestspecial.github.io/portfolio#projects)**
 
 **Chrome Web Store Extensions**
 
