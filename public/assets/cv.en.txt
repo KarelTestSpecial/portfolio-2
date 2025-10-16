@@ -1,4 +1,4 @@
----
+~~~
 name: Karel Decherf
 contact:
   email: karel.decherf@gmail.com
@@ -69,7 +69,7 @@ languages:
     proficiency: Good
   - language: German and Spanish
     proficiency: Notions
----
+~~~
 ### **Profile**
 
 Driven and analytical IT professional with a lifelong passion for programming and a solid background in web development. Experienced in a wide range of technologies, including JavaScript, TypeScript, Python, and SQL. I demonstrate current skills and initiative through the continuous development and publication of various projects, including multiple Chrome Web Store extensions and open-source code on GitHub. After a period of inactivity, thanks to technological advancements, I am fully operational again and motivated to contribute my problem-solving skills and technical expertise to a progressive team.
@@ -80,7 +80,7 @@ Driven and analytical IT professional with a lifelong passion for programming an
 
 ### **Recent Projects**
 
-A selection of personal projects that illustrate my current technical skills. For a complete overview of all my work, including live demos and source code, click **[here](https://kareltestspecial.github.io/portfolio#projects)**
+A selection of personal projects that illustrate my current technical skills. For a complete overview of all my work, including live demos and source code, go to [my projects](#projects).
 
 **Chrome Web Store Extensions**
 

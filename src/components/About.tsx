@@ -31,7 +31,7 @@ const About: React.FC<AboutProps> = ({ cvData, translations }) => {
         </div>
         <div className="row mt-4">
           <div className="col-md-6">
-            <h4>Work Experience</h4>
+            <h4>{translations.workExperience}</h4>
             <ul className="list-unstyled">
               {cvData.workExperience?.map((job, index) => (
                 <li key={index} className="mb-3">
@@ -44,13 +44,13 @@ const About: React.FC<AboutProps> = ({ cvData, translations }) => {
             </ul>
           </div>
           <div className="col-md-6">
-            <h4>Skills</h4>
+            <h4>{translations.skills}</h4>
             {cvData.skills && Object.entries(cvData.skills).map(([category, skills]) => (
                 <div key={category}>
                     <p><strong>{category.replace(/_/g, ' ')}:</strong> {skills as string}</p>
                 </div>
             ))}
-            <h4 className="mt-4">Education</h4>
+            <h4 className="mt-4">{translations.education}</h4>
             <ul className="list-unstyled">
               {cvData.education?.map((edu, index) => (
                 <li key={index}>
@@ -61,7 +61,7 @@ const About: React.FC<AboutProps> = ({ cvData, translations }) => {
                 </li>
               ))}
             </ul>
-            <h4 className="mt-4">Languages</h4>
+            <h4 className="mt-4">{translations.languages}</h4>
             <ul className="list-unstyled">
               {cvData.languages?.map((lang, index) => (
                 <li key={index}><strong>{lang.language}:</strong> {lang.proficiency}</li>

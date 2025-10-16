@@ -9,11 +9,6 @@ import Footer from './components/Footer';
 import matter from 'gray-matter';
 import Papa from 'papaparse';
 
-import cvNl from './assets/cv.nl.md';
-import cvEn from './assets/cv.en.md';
-import projectsNl from './assets/projects.nl.tsv';
-import projectsEn from './assets/projects.en.tsv';
-
 function App() {
   const [lang, setLang] = useState<'nl' | 'en'>('nl');
   const [cvData, setCvData] = useState(null);
@@ -32,7 +27,11 @@ function App() {
       viewGithub: "GitHub",
       viewDemo: "Live Demo",
       visitWebsite: "Bezoek Website",
-      about: "Over Mij"
+      about: "Over Mij",
+      workExperience: "Werkervaring",
+      skills: "Vaardigheden",
+      education: "Opleiding",
+      languages: "Talen"
     },
     en: {
       myProjects: "My Projects",
@@ -45,7 +44,11 @@ function App() {
       viewGithub: "GitHub",
       viewDemo: "Live Demo",
       visitWebsite: "Visit Website",
-      about: "About"
+      about: "About",
+      workExperience: "Work Experience",
+      skills: "Skills",
+      education: "Education",
+      languages: "Languages"
     }
   };
 
@@ -53,15 +56,21 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const cvUrl = lang === 'nl' ? cvNl : cvEn;
+        const cvUrl = `${process.env.PUBLIC_URL}/assets/cv.${lang}.txt`;
         const cvResponse = await fetch(cvUrl);
+        if (!cvResponse.ok) {
+          throw new Error(`Failed to fetch ${cvUrl}: ${cvResponse.status} ${cvResponse.statusText}`);
+        }
         const cvText = await cvResponse.text();
-        const { data, content } = matter(cvText);
+        const { data, content } = matter(cvText, { delimiters: '~~~' });
         // @ts-ignore
         setCvData({ ...data, content });
 
-        const projectsUrl = lang === 'nl' ? projectsNl : projectsEn;
+        const projectsUrl = `${process.env.PUBLIC_URL}/assets/projects.${lang}.tsv`;
         const projectsResponse = await fetch(projectsUrl);
+        if (!projectsResponse.ok) {
+            throw new Error(`Failed to fetch ${projectsUrl}: ${projectsResponse.status} ${projectsResponse.statusText}`);
+        }
         const projectsText = await projectsResponse.text();
 
         const results = Papa.parse(projectsText, {
@@ -110,7 +119,7 @@ function App() {
     return (
       <div className="container text-center mt-5">
         <h1>Error</h1>
-        <p className="lead">Could not load CV data. Please check if the file `src/assets/cv.{lang}.md` exists and is accessible.</p>
+        <p className="lead">Could not load CV data. Please check if the file `public/assets/cv.{lang}.txt` exists and is accessible.</p>
       </div>
     );
   }
