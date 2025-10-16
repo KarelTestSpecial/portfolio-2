@@ -33,21 +33,21 @@ workExperience:
       (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC) waaruit een
       sterke werkethiek en aanpassingsvermogen blijkt.  
 skills:
-  'AI & Automatisering:': >-
+  AI & Automatisering: >-
     Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity,
     NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter,
     CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy  
-  'Programmeertalen & Frameworks:': >-
+  Programmeertalen & Frameworks: >-
     JavaScript, TypeScript, Python, Java, PHP, SQL, Perl, RPG, Visual Basic,
     .Net, ASP.NET Core  
-  'Web & Databases:': >-
+  Web & Databases: >-
     React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase,
     Supabase, PostgreSQL, MySQL  
-  'Software & IDEs:': >-
+  Software & IDEs: >-
     VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google
     Workspace, MS Office, Odoo, Notion  
-  'Besturingssystemen::': 'Windows, Linux, ChromeOS'
-  'Netwerkprotocollen:': 'IIS, WINS, DHCP, DNS'
+  Besturingssystemen: 'Windows, Linux, ChromeOS'
+  Netwerkprotocollen: 'IIS, WINS, DHCP, DNS'
 education:
   - degree: Inleiding tot de Psychologie
     institution: Open Universitei
@@ -103,4 +103,3 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 * **Vegan BioTech Report:** Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.
 
 ---
-
