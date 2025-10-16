@@ -48,7 +48,7 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const cvUrl = `${process.env.PUBLIC_URL}/assets/cv.${lang}.md`;
+        const cvUrl = `${process.env.PUBLIC_URL}/assets/cv.${lang}.txt`;
         const cvResponse = await fetch(cvUrl);
         if (!cvResponse.ok) {
           throw new Error(`Failed to fetch ${cvUrl}: ${cvResponse.status} ${cvResponse.statusText}`);
@@ -111,7 +111,7 @@ function App() {
     return (
       <div className="container text-center mt-5">
         <h1>Error</h1>
-        <p className="lead">Could not load CV data. Please check if the file `public/assets/cv.{lang}.md` exists and is accessible.</p>
+        <p className="lead">Could not load CV data. Please check if the file `public/assets/cv.{lang}.txt` exists and is accessible.</p>
       </div>
     );
   }
