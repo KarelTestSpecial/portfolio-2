@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Editor</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #444; }
+        label { display: block; margin-top: 1rem; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
+        textarea { min-height: 100px; }
+        button { padding: 0.7rem 1.5rem; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer; margin-top: 1rem; }
+        button:hover { background-color: #0056b3; }
+        .section { border-top: 1px solid #eee; margin-top: 2rem; padding-top: 1rem; }
+        #work-experience-list .experience-item, #skills-list .skill-item, #education-list .education-item, #languages-list .language-item { border: 1px solid #ddd; padding: 1rem; margin-top: 1rem; border-radius: 4px; }
+        .history-item { padding: 0.5rem; cursor: pointer; border-bottom: 1px solid #eee; }
+        .history-item:hover { background-color: #f0f0f0; }
+        .lang-selector { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CV Editor</h1>
+
+        <div class="lang-selector">
+            <label for="language">Select Language:</label>
+            <select id="language" onchange="loadCv()">
+                <option value="nl">Nederlands</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <form id="cv-form">
+            <h2>Contact</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="contact.email">
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" name="contact.linkedin">
+            <label for="github">GitHub:</label>
+            <input type="text" id="github" name="contact.github">
+             <label for="address">Address:</label>
+            <input type="text" id="address" name="contact.address">
+
+            <div class="section">
+                <h2>Profile</h2>
+                <label for="profile">Profile (Markdown supported):</label>
+                <textarea id="profile" name="content"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Work Experience</h2>
+                <div id="work-experience-list"></div>
+                <button type="button" onclick="addWorkExperience()">Add Work Experience</button>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <div id="skills-list"></div>
+                <button type="button" onclick="addSkill()">Add Skill Category</button>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <div id="education-list"></div>
+                <button type="button" onclick="addEducation()">Add Education</button>
+            </div>
+
+            <div class="section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+                <button type="button" onclick="addLanguage()">Add Language</button>
+            </div>
+
+            <hr>
+            <button type="submit">Save CV</button>
+        </form>
+
+        <div class="section">
+            <h2>Version History</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'nl';
+
+        // --- Data Handling ---
+        function getFormData() {
+            const form = document.getElementById('cv-form');
+            const data = {
+                name: form.querySelector('#name').value,
+                contact: {
+                    email: form.querySelector('#email').value,
+                    linkedin: form.querySelector('#linkedin').value,
+                    github: form.querySelector('#github').value,
+                    address: form.querySelector('#address').value,
+                },
+                content: form.querySelector('#profile').value,
+                workExperience: [],
+                skills: {},
+                education: [],
+                languages: []
+            };
+
+            document.querySelectorAll('#work-experience-list .experience-item').forEach(item => {
+                data.workExperience.push({
+                    role: item.querySelector('input[name="role"]').value,
+                    company: item.querySelector('input[name="company"]').value,
+                    period: item.querySelector('input[name="period"]').value,
+                    description: item.querySelector('textarea[name="description"]').value,
+                });
+            });
+
+            document.querySelectorAll('#skills-list .skill-item').forEach(item => {
+                const key = item.querySelector('input[name="skill-key"]').value;
+                const value = item.querySelector('input[name="skill-value"]').value;
+                if (key) data.skills[key] = value;
+            });
+
+            document.querySelectorAll('#education-list .education-item').forEach(item => {
+                data.education.push({
+                    degree: item.querySelector('input[name="degree"]').value,
+                    institution: item.querySelector('input[name="institution"]').value,
+                    year: item.querySelector('input[name="year"]').value,
+                });
+            });
+
+            document.querySelectorAll('#languages-list .language-item').forEach(item => {
+                data.languages.push({
+                    language: item.querySelector('input[name="language"]').value,
+                    proficiency: item.querySelector('input[name="proficiency"]').value,
+                });
+            });
+
+            return data;
+        }
+
+        function setFormData(data) {
+            const form = document.getElementById('cv-form');
+            form.querySelector('#name').value = data.name || '';
+            form.querySelector('#email').value = data.contact?.email || '';
+            form.querySelector('#linkedin').value = data.contact?.linkedin || '';
+            form.querySelector('#github').value = data.contact?.github || '';
+            form.querySelector('#address').value = data.contact?.address || '';
+            form.querySelector('#profile').value = data.content || '';
+
+            const workList = document.getElementById('work-experience-list');
+            workList.innerHTML = '';
+            (data.workExperience || []).forEach(exp => addWorkExperience(exp));
+
+            const skillList = document.getElementById('skills-list');
+            skillList.innerHTML = '';
+            if (data.skills) {
+                Object.entries(data.skills).forEach(([key, value]) => addSkill({ key, value }));
+            }
+
+            const educationList = document.getElementById('education-list');
+            educationList.innerHTML = '';
+            (data.education || []).forEach(edu => addEducation(edu));
+
+            const languageList = document.getElementById('languages-list');
+            languageList.innerHTML = '';
+            (data.languages || []).forEach(lang => addLanguage(lang));
+        }
+
+        // --- Dynamic Form Elements ---
+        function addWorkExperience(exp = {}) {
+            const list = document.getElementById('work-experience-list');
+            const item = document.createElement('div');
+            item.className = 'experience-item';
+            item.innerHTML = `
+                <label>Role:</label><input type="text" name="role" value="${exp.role || ''}">
+                <label>Company:</label><input type="text" name="company" value="${exp.company || ''}">
+                <label>Period:</label><input type="text" name="period" value="${exp.period || ''}">
+                <label>Description (Markdown supported):</label><textarea name="description">${exp.description || ''}</textarea>
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        function addSkill(skill = {}) {
+            const list = document.getElementById('skills-list');
+            const item = document.createElement('div');
+            item.className = 'skill-item';
+            item.innerHTML = `
+                <label>Category:</label><input type="text" name="skill-key" value="${skill.key || ''}">
+                <label>Skills (comma-separated):</label><input type="text" name="skill-value" value="${skill.value || ''}">
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        function addEducation(edu = {}) {
+            const list = document.getElementById('education-list');
+            const item = document.createElement('div');
+            item.className = 'education-item';
+            item.innerHTML = `
+                <label>Degree:</label><input type="text" name="degree" value="${edu.degree || ''}">
+                <label>Institution:</label><input type="text" name="institution" value="${edu.institution || ''}">
+                <label>Year:</label><input type="text" name="year" value="${edu.year || ''}">
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        function addLanguage(lang = {}) {
+            const list = document.getElementById('languages-list');
+            const item = document.createElement('div');
+            item.className = 'language-item';
+            item.innerHTML = `
+                <label>Language:</label><input type="text" name="language" value="${lang.language || ''}">
+                <label>Proficiency:</label><input type="text" name="proficiency" value="${lang.proficiency || ''}">
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        // --- API Calls ---
+        async function loadCv(fromHistoryFile = null) {
+            currentLang = document.getElementById('language').value;
+            let url = `/api/cv/${currentLang}`;
+            // This part is for loading from history, which needs more logic to fetch the specific file content.
+            // For now, it just reloads the main CV.
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('CV not found. You can start a new one.');
+                const data = await response.json();
+                setFormData(data);
+            } catch (error) {
+                alert(error.message);
+                setFormData({}); // Clear form if CV doesn't exist
+            }
+            loadHistory();
+        }
+
+        async function loadHistory() {
+            const response = await fetch(`/api/history/${currentLang}`);
+            const files = await response.json();
+            const list = document.getElementById('history-list');
+            list.innerHTML = files.map(file => `<div class="history-item" onclick="alert('Restore functionality to be implemented')">${file}</div>`).join('');
+        }
+
+        async function saveCv(event) {
+            event.preventDefault();
+            const data = getFormData();
+            const response = await fetch(`/api/cv/${currentLang}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            alert(result.message);
+            loadHistory();
+        }
+
+        // --- Initial Load ---
+        window.onload = () => {
+            loadCv();
+            document.getElementById('cv-form').addEventListener('submit', saveCv);
+        };
+    </script>
+</body>
+</html>

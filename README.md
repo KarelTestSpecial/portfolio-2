@@ -1,78 +1,108 @@
-# Personal Portfolio Website
+# Portfolio Website
 
-This is a personal portfolio website built with React to showcase projects and professional information. The website is live and deployed via GitHub Pages.
+This is a React-based portfolio website designed to showcase projects and a curriculum vitae. It features a unique local content management system for the CV and supports multiple languages.
 
-## How to Update the Website
+## Quick Start
 
-The website content is managed through a local `projects.tsv` file. To update the site with the latest projects and deploy it, follow these steps.
+-   **Run the portfolio locally:** `npm start`
+-   **Edit your CV:** `npm run edit-cv`
+-   **Deploy to GitHub Pages:** `npm run deploy`
 
-### 1. Installation (Only needs to be done once)
-Before you can run any commands, you need to install the project's dependencies.
-```bash
-npm install
-```
+## Technologies Used
 
-### 2. Update Content
-Project management is done by directly editing the `projects/projects.tsv` file.
-
-1.  **Open the file `projects/projects.tsv`** in the root of this project.
-2.  **Add a new row** for a new project, or **edit an existing row** to modify a project. Make sure to maintain the tab-separated structure.
-3.  **Save the file.**
-
-### 3. Update and Deploy
-To publish your changes to the live website, run the following single command in your terminal:
-```bash
-npm run update-and-deploy
-```
-This command automatically performs two actions in sequence:
-1.  **Updates Data**: It reads the latest project list from `projects/projects.tsv` and rebuilds the local `src/data/projects.json` file.
-2.  **Deploys Website**: It then builds a production version of the website and deploys it to GitHub Pages.
-
-It can take a few minutes for the changes to become visible on the live URL.
+- **Frontend:** React, TypeScript, Bootstrap
+- **Content Management (CV):** A local Node.js/Express web application.
+- **Data Formats:** Markdown with YAML Front Matter for the CV, TSV for projects.
 
 ---
 
-## Column Definitions
+## Content Management
 
-The **first row** of `projects.tsv` contains the column headers. The order and exact spelling are **very important**.
+The content for this website is managed through local files in the `public/` directory, making it easy to update without touching the core application code.
 
-`type` | `name` | `description` | `link` | `githubLink` | `liveLink` | `status`
---- | --- | --- | --- | --- | --- | ---
+### 1. Managing Your CV
 
-### Explanation:
+Your CV is managed through a user-friendly, local web-based editor. This avoids the need to manually edit structured files and prevents errors.
 
-*   **type**: The type of project. Must be **exactly** one of the following three values:
-    *   `chrome` (for a Chrome Extension)
-    *   `github` (for a GitHub Project)
-    *   `website` (for another website)
-*   **name**: The name of your project (e.g., "My Cool App").
-*   **description**: A short description of the project.
-*   **link**: The main link for the project.
-    *   For `chrome`, this is the link to the Chrome Web Store.
-    *   For `website`, this is the link to the website.
-    *   For `github`, this field is not required.
-*   **githubLink**: **Only** for `github` projects. The link to the GitHub repository.
-*   **liveLink**: **Only** for `github` projects. The link to a live demo of the project.
-*   **status**: (Optional) Determines if the "Live Demo" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button.
+**How to use the CV Editor:**
+
+1.  **Start the editor:**
+    Open your terminal in the project directory and run the following command:
+    ```bash
+    npm run edit-cv
+    ```
+    This will start a local web server.
+
+2.  **Open the editor in your browser:**
+    Navigate to [http://localhost:4000](http://localhost:4000).
+
+3.  **Edit your data:**
+    You will see a form where you can fill in all the details of your CV, from contact information to work experience and skills. You can easily copy and paste text from other documents into these fields.
+
+4.  **Language Selection:**
+    Use the dropdown menu at the top to switch between the Dutch (`nl`) and English (`en`) versions of your CV.
+
+5.  **Save your changes:**
+    Click the "Save CV" button. This will automatically:
+    - Update the correct file (`public/cv.nl.md` or `public/cv.en.md`).
+    - Create a backup of the *previous* version in the `CV_HISTORY/` directory. You will never lose old versions.
+
+### 2. Managing Your Projects
+
+Project information is stored in Tab-Separated Values (TSV) files, which are easy to edit with any spreadsheet software (like Google Sheets, Microsoft Excel, or LibreOffice Calc).
+
+- **Dutch Projects:** `public/projects.nl.tsv`
+- **English Projects:** `public/projects.en.tsv`
+
+**Columns:**
+- `type`: The category of the project. Use `chrome`, `github`, or `website`.
+- `name`: The name of the project.
+- `description`: A short description.
+- `githubLink`: The full URL to the GitHub repository (optional).
+- `liveLink`: The full URL to the live demo or website (optional).
+- `status`: Set to `active` to make the link visible, or `inactive` to hide it.
+
+**Using Google Sheets (Optional):**
+
+You can also manage your projects in a Google Sheet.
+1.  Create a sheet with the columns listed above.
+2.  Go to `File > Share > Publish to web`.
+3.  Select the correct sheet, and choose "Tab-separated values (.tsv)".
+4.  Click "Publish".
+5.  Copy the generated URL.
+6.  Open `src/App.tsx` and replace the `projectsUrl` variable with your new Google Sheet URL.
 
 ---
 
-## Advanced Scripts
+## Development and Deployment
 
-The following scripts are also available for more specific tasks.
+### Running the Portfolio Locally
 
-**`npm start`**
+To view the main portfolio website in a development environment, run:
 
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it locally.
+```bash
+npm start
+```
 
-**`npm run update-projects`**
+This will open the site at [http://localhost:3000](http://localhost:3000).
 
-Only updates the project list from `projects.tsv` without deploying. Useful for checking the data locally before publishing.
+### Building for Production
 
-**`npm run deploy`**
+To create an optimized build of the website for deployment, run:
 
-Only deploys the website with the current local data. Use this if you have already updated the project data and just want to re-deploy.
+```bash
+npm run build
+```
 
-**`npm test`**
+This command bundles all the necessary files into the `build/` directory.
 
-Launches the test runner.
+### Deploying to GitHub Pages
+
+This project is set up to be easily deployed to GitHub Pages.
+
+1.  Make sure your changes are committed to your repository.
+2.  Run the deploy script:
+    ```bash
+    npm run deploy
+    ```
+    This script will first run the `build` command and then push the contents of the `build/` folder to the `gh-pages` branch of your repository, making your site live.
