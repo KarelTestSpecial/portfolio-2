@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio_site=self.webpackChunkportfolio_site||[]).push([[356],{2356:(e,s,t)=>{e.exports=t.p+"static/media/cv.nl.ad39705b4168db4274c0.md"}}]);
