@@ -2,6 +2,12 @@
 
 This is a React-based portfolio website designed to showcase projects and a curriculum vitae. It features a unique local content management system for the CV and supports multiple languages.
 
+## Quick Start
+
+-   **Run the portfolio locally:** `npm start`
+-   **Edit your CV:** `npm run edit-cv`
+-   **Deploy to GitHub Pages:** `npm run deploy`
+
 ## Technologies Used
 
 - **Frontend:** React, TypeScript, Bootstrap

@@ -9,6 +9,11 @@ import Footer from './components/Footer';
 import matter from 'gray-matter';
 import Papa from 'papaparse';
 
+import cvNl from './assets/cv.nl.md';
+import cvEn from './assets/cv.en.md';
+import projectsNl from './assets/projects.nl.tsv';
+import projectsEn from './assets/projects.en.tsv';
+
 function App() {
   const [lang, setLang] = useState<'nl' | 'en'>('nl');
   const [cvData, setCvData] = useState(null);
@@ -48,17 +53,15 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // Dynamically import the markdown file as a raw text module
-        const cvModule = await import(`./assets/cv.${lang}.md`);
-        const cvResponse = await fetch(cvModule.default);
+        const cvUrl = lang === 'nl' ? cvNl : cvEn;
+        const cvResponse = await fetch(cvUrl);
         const cvText = await cvResponse.text();
         const { data, content } = matter(cvText);
         // @ts-ignore
         setCvData({ ...data, content });
 
-        // Dynamically import the tsv file as a raw text module
-        const projectsModule = await import(`./assets/projects.${lang}.tsv`);
-        const projectsResponse = await fetch(projectsModule.default);
+        const projectsUrl = lang === 'nl' ? projectsNl : projectsEn;
+        const projectsResponse = await fetch(projectsUrl);
         const projectsText = await projectsResponse.text();
 
         const results = Papa.parse(projectsText, {

@@ -87,7 +87,7 @@ Gedreven en analytische IT-professional met een levenslange passie voor programm
 
 ### **Recente Projecten**
 
-Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden illustreren. Voor een compleet overzicht van al mijn werk, inclusief live demo's en broncode, kunt u mijn **portfolio website bezoeken: [kareltestspecial.github.io/portfolio/](https://kareltestspecial.github.io/portfolio/)**
+Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden illustreren. Voor een compleet overzicht van al mijn werk, inclusief live demo's en broncode, klik **[hier](https://kareltestspecial.github.io/portfolio#projects)**
 
 **Chrome Web Store Extensies**
 
