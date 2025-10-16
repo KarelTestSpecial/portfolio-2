@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%; /* Ensure card takes full height of the column */
+  width: 100%; /* Ensure card takes full width of the column */
 }
 
 #projects .card-body {

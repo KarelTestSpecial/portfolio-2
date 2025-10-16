@@ -35,10 +35,10 @@ const About: React.FC<AboutProps> = ({ cvData, translations }) => {
             <ul className="list-unstyled">
               {cvData.workExperience?.map((job, index) => (
                 <li key={index} className="mb-3">
-                  <strong>{job.role}</strong> @ {job.company}
+                  <strong>{job.role}</strong>{job.company && ` @ ${job.company}`}
                   <br />
                   <small className="text-muted">{job.period}</small>
-                  <p>{job.description}</p>
+                  <ReactMarkdown>{job.description}</ReactMarkdown>
                 </li>
               ))}
             </ul>

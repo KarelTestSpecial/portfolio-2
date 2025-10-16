@@ -10,7 +10,7 @@ const port = 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const CV_DIR = path.join(__dirname, '..', 'public');
+const CV_DIR = path.join(__dirname, '..', 'src', 'assets');
 const HISTORY_DIR = path.join(__dirname, '..', 'CV_HISTORY');
 
 // Ensure directories exist

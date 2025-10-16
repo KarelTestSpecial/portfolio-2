@@ -4,7 +4,7 @@ contact:
   email: karel.decherf@gmail.com
   linkedin: 'https://www.linkedin.com/in/karel-decherf-8212a9221/'
   github: 'https://github.com/KarelTestSpecial'
-  address: ''
+  address: Hurstweg 9
 workExperience:
   - role: Webontwikkelaar
     company: 'Visitronics NV, Leuven'
@@ -19,19 +19,25 @@ workExperience:
     company: 'IKEA, Ternat'
     period: 03/1998 – 01/2001
     description: >-
+
       * Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en
       uitgaande goederen.  
 
       * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
   - role: Andere Functies
     company: ''
-    period: 1994 – 2025
+    period: 04/1994 – 02/1997
     description: >-
       Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad,
       Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur**
-      (Tele-Performance), **Fabrieksarbeider** (Pasec), **Keukenhulp**
-      (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC) waaruit een
-      sterke werkethiek en aanpassingsvermogen blijkt.  
+      (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen
+      blijkt.  
+  - role: ''
+    company: ''
+    period: 2001 \ 2025
+    description: >-
+      **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C),
+      **Klerenhersteller** (De Haven), **Kok** (FPC)
 skills:
   'AI & Automatisering:': >-
     Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity,
@@ -48,34 +54,6 @@ skills:
     Workspace, MS Office, Odoo, Notion  
   'Besturingssystemen::': 'Windows, Linux, ChromeOS'
   'Netwerkprotocollen:': 'IIS, WINS, DHCP, DNS'
-education:
-  - degree: Inleiding tot de Psychologie
-    institution: Open Universitei
-    year: '2012  '
-  - degree: 'Omzetting Industrieel Ingenieur Mechanica '
-    institution: (HTL4MMC)
-    year: '2011'
-  - degree: Professionele Bachelor in de Toegepaste Informatica
-    institution: GOCI Aarschot
-    year: '2001'
-  - degree: Kandidatuur Industrieel Ingenieur (1e kand. cum laude)
-    institution: KIH De Nayer
-    year: '1995'
-  - degree: Kandidatuur Filosofie
-    institution: KU Leuven
-    year: 1993 – 1994
-  - degree: ASO Wetenschappen-Wiskunde (8u Wis.)
-    institution: Sint-Godelieve-Instituut Lennik
-    year: '1993'
-languages:
-  - language: Nederlands
-    proficiency: Moedertaal
-  - language: Engels
-    proficiency: Goed
-  - language: Frans
-    proficiency: Goed
-  - language: Duits en Spaans
-    proficiency: Noties
 ---
 ### **Profiel**
 
@@ -104,3 +82,21 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 ---
 
+### **Opleidingen en Cursussen**
+
+* **Inleiding tot de Psychologie** | Open Universiteit | 2012  
+* **Omzetting Industrieel Ingenieur Mechanica (HTL4MMC)** | 2011  
+* **Professionele Bachelor in de Toegepaste Informatica** | GOCI Aarschot | 2001  
+* **Kandidatuur Industrieel Ingenieur (1e kand. cum laude)** | KIH De Nayer | 1995  
+* **Kandidatuur Filosofie** | KU Leuven | 1993 – 1994  
+* **ASO Wetenschappen-Wiskunde (8u Wis.)** | Sint-Godelieve-Instituut Lennik | 1993
+
+---
+
+### **Talen & Vervoer**
+
+* **Nederlands:** Moedertaal  
+* **Engels:** Goed  
+* **Frans:** Goed  
+* **Duits en Spaans:** Noties  
+* **Vervoer:** Rijbewijs B

@@ -25,13 +25,18 @@ workExperience:
       * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
   - role: Andere Functies
     company: ''
-    period: 1994 – 2025
+    period: 04/1994 – 02/1997
     description: >-
       Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad,
       Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur**
-      (Tele-Performance), **Fabrieksarbeider** (Pasec), **Keukenhulp**
-      (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC) waaruit een
-      sterke werkethiek en aanpassingsvermogen blijkt.  
+      (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen
+      blijkt.  
+  - role: ''
+    company: ''
+    period: 2001 \ 2025
+    description: >-
+      **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C),
+      **Klerenhersteller** (De Haven), **Kok** (FPC)
 skills:
   'AI & Automatisering:': >-
     Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity,
@@ -52,8 +57,8 @@ education:
   - degree: Inleiding tot de Psychologie
     institution: Open Universitei
     year: '2012  '
-  - degree: 'Omzetting Industrieel Ingenieur Mechanica '
-    institution: (HTL4MMC)
+  - degree: Omzetting Industrieel Ingenieur Mechanica (HTL4MMC)
+    institution: ''
     year: '2011'
   - degree: Professionele Bachelor in de Toegepaste Informatica
     institution: GOCI Aarschot

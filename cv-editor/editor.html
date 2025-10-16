@@ -14,7 +14,7 @@
         button { padding: 0.7rem 1.5rem; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer; margin-top: 1rem; }
         button:hover { background-color: #0056b3; }
         .section { border-top: 1px solid #eee; margin-top: 2rem; padding-top: 1rem; }
-        #work-experience-list .experience-item, #skills-list .skill-item { border: 1px solid #ddd; padding: 1rem; margin-top: 1rem; border-radius: 4px; }
+        #work-experience-list .experience-item, #skills-list .skill-item, #education-list .education-item, #languages-list .language-item { border: 1px solid #ddd; padding: 1rem; margin-top: 1rem; border-radius: 4px; }
         .history-item { padding: 0.5rem; cursor: pointer; border-bottom: 1px solid #eee; }
         .history-item:hover { background-color: #f0f0f0; }
         .lang-selector { margin-bottom: 2rem; }
@@ -63,6 +63,18 @@
                 <button type="button" onclick="addSkill()">Add Skill Category</button>
             </div>
 
+            <div class="section">
+                <h2>Education</h2>
+                <div id="education-list"></div>
+                <button type="button" onclick="addEducation()">Add Education</button>
+            </div>
+
+            <div class="section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+                <button type="button" onclick="addLanguage()">Add Language</button>
+            </div>
+
             <hr>
             <button type="submit">Save CV</button>
         </form>
@@ -89,7 +101,9 @@
                 },
                 content: form.querySelector('#profile').value,
                 workExperience: [],
-                skills: {}
+                skills: {},
+                education: [],
+                languages: []
             };
 
             document.querySelectorAll('#work-experience-list .experience-item').forEach(item => {
@@ -105,6 +119,21 @@
                 const key = item.querySelector('input[name="skill-key"]').value;
                 const value = item.querySelector('input[name="skill-value"]').value;
                 if (key) data.skills[key] = value;
+            });
+
+            document.querySelectorAll('#education-list .education-item').forEach(item => {
+                data.education.push({
+                    degree: item.querySelector('input[name="degree"]').value,
+                    institution: item.querySelector('input[name="institution"]').value,
+                    year: item.querySelector('input[name="year"]').value,
+                });
+            });
+
+            document.querySelectorAll('#languages-list .language-item').forEach(item => {
+                data.languages.push({
+                    language: item.querySelector('input[name="language"]').value,
+                    proficiency: item.querySelector('input[name="proficiency"]').value,
+                });
             });
 
             return data;
@@ -128,6 +157,14 @@
             if (data.skills) {
                 Object.entries(data.skills).forEach(([key, value]) => addSkill({ key, value }));
             }
+
+            const educationList = document.getElementById('education-list');
+            educationList.innerHTML = '';
+            (data.education || []).forEach(edu => addEducation(edu));
+
+            const languageList = document.getElementById('languages-list');
+            languageList.innerHTML = '';
+            (data.languages || []).forEach(lang => addLanguage(lang));
         }
 
         // --- Dynamic Form Elements ---
@@ -139,7 +176,7 @@
                 <label>Role:</label><input type="text" name="role" value="${exp.role || ''}">
                 <label>Company:</label><input type="text" name="company" value="${exp.company || ''}">
                 <label>Period:</label><input type="text" name="period" value="${exp.period || ''}">
-                <label>Description:</label><textarea name="description">${exp.description || ''}</textarea>
+                <label>Description (Markdown supported):</label><textarea name="description">${exp.description || ''}</textarea>
                 <button type="button" onclick="this.parentElement.remove()">Remove</button>
             `;
             list.appendChild(item);
@@ -152,6 +189,31 @@
             item.innerHTML = `
                 <label>Category:</label><input type="text" name="skill-key" value="${skill.key || ''}">
                 <label>Skills (comma-separated):</label><input type="text" name="skill-value" value="${skill.value || ''}">
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        function addEducation(edu = {}) {
+            const list = document.getElementById('education-list');
+            const item = document.createElement('div');
+            item.className = 'education-item';
+            item.innerHTML = `
+                <label>Degree:</label><input type="text" name="degree" value="${edu.degree || ''}">
+                <label>Institution:</label><input type="text" name="institution" value="${edu.institution || ''}">
+                <label>Year:</label><input type="text" name="year" value="${edu.year || ''}">
+                <button type="button" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            list.appendChild(item);
+        }
+
+        function addLanguage(lang = {}) {
+            const list = document.getElementById('languages-list');
+            const item = document.createElement('div');
+            item.className = 'language-item';
+            item.innerHTML = `
+                <label>Language:</label><input type="text" name="language" value="${lang.language || ''}">
+                <label>Proficiency:</label><input type="text" name="proficiency" value="${lang.proficiency || ''}">
                 <button type="button" onclick="this.parentElement.remove()">Remove</button>
             `;
             list.appendChild(item);
