@@ -106,6 +106,15 @@ function App() {
     return <div>Loading...</div>;
   }
 
+  if (!cvData) {
+    return (
+      <div className="container text-center mt-5">
+        <h1>Error</h1>
+        <p className="lead">Could not load CV data. Please check if the file `public/cv.{lang}.md` exists and is accessible.</p>
+      </div>
+    );
+  }
+
   const t = translations[lang];
 
   return (
