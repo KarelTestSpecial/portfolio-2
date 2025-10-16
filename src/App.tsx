@@ -58,7 +58,9 @@ function App() {
 
     const fetchData = async () => {
       setLoading(true);
-      const baseUrl = process.env.PUBLIC_URL;
+      // In development, PUBLIC_URL is an empty string, so we use '/'.
+      // In production, it's the correct path from package.json.
+      const baseUrl = process.env.NODE_ENV === 'development' ? '' : process.env.PUBLIC_URL;
       try {
         // Fetch and parse CV data
         const cvResponse = await fetch(`${baseUrl}/cv.${lang}.md`);
