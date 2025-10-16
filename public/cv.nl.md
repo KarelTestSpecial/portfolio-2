@@ -1,11 +1,60 @@
 ---
+name: Karel Decherf
+contact:
+  email: karel.decherf@gmail.com
+  linkedin: 'https://www.linkedin.com/in/karel-decherf-8212a9221/'
+  github: 'https://github.com/KarelTestSpecial'
+  address: Hurstweg 9
+workExperience:
+  - role: Webontwikkelaar
+    company: 'Visitronics NV, Leuven'
+    period: 01/2001 – 08/2001
+    description: >-
+      * Ontwikkelen en onderhouden van webapplicaties op maat voor diverse
+      klanten.
 
-# **Karel Decherf**
+      * Toepassen van een reeks webtechnologieën om te voldoen aan specifieke
+      functionele eisen.
+  - role: Magazijnier
+    company: 'IKEA, Ternat'
+    period: 03/1998 – 01/2001
+    description: >-
 
-Hurstweg 9, 9000 Gent | [karel.decherf@gmail.be](mailto:karel.decherf@gmail.be) [linkedin.com/in/karel-decherf-8212a9221](https://www.linkedin.com/in/karel-decherf-8212a9221) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
+      * Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en
+      uitgaande goederen.
 
+      * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
+  - role: Andere Functies
+    company: ''
+    period: 04/1994 – 02/1997
+    description: >-
+      Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad,
+      Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur**
+      (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen
+      blijkt.
+  - role: ''
+    company: ''
+    period: 2001 \ 2025
+    description: >-
+      **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C),
+      **Klerenhersteller** (De Haven), **Kok** (FPC)
+skills:
+  'AI & Automatisering:': >-
+    Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity,
+    NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter,
+    CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy
+  'Programmeertalen & Frameworks:': >-
+    JavaScript, TypeScript, Python, Java, PHP, SQL, Perl, RPG, Visual Basic,
+    .Net, ASP.NET Core
+  'Web & Databases:': >-
+    React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase,
+    Supabase, PostgreSQL, MySQL
+  'Software & IDEs:': >-
+    VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google
+    Workspace, MS Office, Odoo, Notion
+  'Besturingssystemen::': 'Windows, Linux, ChromeOS'
+  'Netwerkprotocollen:': 'IIS, WINS, DHCP, DNS'
 ---
-
 ### **Profiel**
 
 Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in webontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Python en SQL. Ik demonstreer actuele vaardigheden en initiatief door de continue ontwikkeling en publicatie van diverse projecten, waaronder meerdere Chrome Web Store-extensies en open-source code op GitHub. Na een periode van inactiviteit, ben ik dankzij de technologische vooruitgang weer volledig inzetbaar en gemotiveerd om mijn probleemoplossend vermogen en technische expertise bij te dragen aan een vooruitstrevend team.
@@ -30,37 +79,6 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 * **URL-pulse:** Een via GitHub Actions geautomatiseerde monitoringtool die de status van URL's controleert en rapporteert.  
 * **OCR Combinator:** Een tool ontwikkeld om de output van verschillende OCR-diensten te combineren en te verbeteren.  
 * **Vegan BioTech Report:** Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.
-
----
-
-### **Werkervaring**
-
-**Webontwikkelaar** | Visitronics NV, Leuven | 01/2001 – 08/2001
-
-* Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.  
-* Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen.
-
-**Magazijnier** | IKEA, Ternat | 03/1998 – 01/2001
-
-* Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen.  
-* Optimaliseren van de magazijnwerking voor maximale efficiëntie.
-
-**Andere Functies**
-
-* 04/1994 – 02/1997 :  Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
-* 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
-
----
-
-### **Vaardigheden**
-
-* **AI & Automatisering:** Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy  
-* **Programmeertalen & Frameworks:** JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core  
-* **Web & Databases:** React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase, Supabase, PostgreSQL, MySQL  
-* **Software & IDEs:** VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google Workspace, MS Office, Odoo, Notion  
-* **Webdesign:** Figma, Canva, Photoshop, Wordpress, Wix  
-* **Besturingssystemen:** Windows, Linux, ChromeOS  
-* **Netwerkprotocollen:** IIS, WINS, DHCP, DNS
 
 ---
 
