@@ -54,8 +54,7 @@ function App() {
           throw new Error(`Failed to fetch ${cvUrl}: ${cvResponse.status} ${cvResponse.statusText}`);
         }
         const cvText = await cvResponse.text();
-        console.log('Raw CV Text:', cvText);
-        const { data, content } = matter(cvText);
+        const { data, content } = matter(cvText, { delimiters: '~~~' });
         // @ts-ignore
         setCvData({ ...data, content });
 
