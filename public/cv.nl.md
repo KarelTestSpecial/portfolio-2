@@ -11,7 +11,7 @@ workExperience:
     period: 01/2001 – 08/2001
     description: >-
       * Ontwikkelen en onderhouden van webapplicaties op maat voor diverse
-      klanten.
+      klanten.  
 
       * Toepassen van een reeks webtechnologieën om te voldoen aan specifieke
       functionele eisen.
@@ -21,7 +21,7 @@ workExperience:
     description: >-
 
       * Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en
-      uitgaande goederen.
+      uitgaande goederen.  
 
       * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
   - role: Andere Functies
@@ -31,7 +31,7 @@ workExperience:
       Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad,
       Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur**
       (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen
-      blijkt.
+      blijkt.  
   - role: ''
     company: ''
     period: 2001 \ 2025
@@ -42,16 +42,16 @@ skills:
   'AI & Automatisering:': >-
     Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity,
     NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter,
-    CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy
+    CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy  
   'Programmeertalen & Frameworks:': >-
     JavaScript, TypeScript, Python, Java, PHP, SQL, Perl, RPG, Visual Basic,
-    .Net, ASP.NET Core
+    .Net, ASP.NET Core  
   'Web & Databases:': >-
     React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase,
-    Supabase, PostgreSQL, MySQL
+    Supabase, PostgreSQL, MySQL  
   'Software & IDEs:': >-
     VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google
-    Workspace, MS Office, Odoo, Notion
+    Workspace, MS Office, Odoo, Notion  
   'Besturingssystemen::': 'Windows, Linux, ChromeOS'
   'Netwerkprotocollen:': 'IIS, WINS, DHCP, DNS'
 ---
