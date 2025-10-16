@@ -27,7 +27,11 @@ function App() {
       viewGithub: "GitHub",
       viewDemo: "Live Demo",
       visitWebsite: "Bezoek Website",
-      about: "Over Mij"
+      about: "Over Mij",
+      workExperience: "Werkervaring",
+      skills: "Vaardigheden",
+      education: "Opleiding",
+      languages: "Talen"
     },
     en: {
       myProjects: "My Projects",
@@ -40,7 +44,11 @@ function App() {
       viewGithub: "GitHub",
       viewDemo: "Live Demo",
       visitWebsite: "Visit Website",
-      about: "About"
+      about: "About",
+      workExperience: "Work Experience",
+      skills: "Skills",
+      education: "Education",
+      languages: "Languages"
     }
   };
 
