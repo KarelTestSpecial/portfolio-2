@@ -48,15 +48,15 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // const cvUrl = `${process.env.PUBLIC_URL}/assets/cv.${lang}.txt`;
-        // const cvResponse = await fetch(cvUrl);
-        // if (!cvResponse.ok) {
-        //   throw new Error(`Failed to fetch ${cvUrl}: ${cvResponse.status} ${cvResponse.statusText}`);
-        // }
-        // const cvText = await cvResponse.text();
-        // const { data, content } = matter(cvText);
+        const cvUrl = `${process.env.PUBLIC_URL}/assets/cv.${lang}.txt`;
+        const cvResponse = await fetch(cvUrl);
+        if (!cvResponse.ok) {
+          throw new Error(`Failed to fetch ${cvUrl}: ${cvResponse.status} ${cvResponse.statusText}`);
+        }
+        const cvText = await cvResponse.text();
+        const { data, content } = matter(cvText);
         // @ts-ignore
-        // setCvData({ ...data, content });
+        setCvData({ ...data, content });
 
         const projectsUrl = `${process.env.PUBLIC_URL}/assets/projects.${lang}.tsv`;
         const projectsResponse = await fetch(projectsUrl);
