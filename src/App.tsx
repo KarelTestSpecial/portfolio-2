@@ -45,42 +45,36 @@ function App() {
   };
 
   useEffect(() => {
-    const parseProjects = (url: string): Promise<any[]> => {
-        return new Promise((resolve, reject) => {
-            Papa.parse(url, {
-                download: true,
-                header: true,
-                complete: (results) => resolve(results.data),
-                error: (error) => reject(error),
-            });
-        });
-    };
-
     const fetchData = async () => {
       setLoading(true);
-      // In development, PUBLIC_URL is an empty string, so we use '/'.
-      // In production, it's the correct path from package.json.
-      const baseUrl = process.env.NODE_ENV === 'development' ? '' : process.env.PUBLIC_URL;
       try {
-        // Fetch and parse CV data
-        const cvResponse = await fetch(`${baseUrl}/cv.${lang}.md`);
+        // Dynamically import the markdown file as a raw text module
+        const cvModule = await import(`./assets/cv.${lang}.md`);
+        const cvResponse = await fetch(cvModule.default);
         const cvText = await cvResponse.text();
         const { data, content } = matter(cvText);
         // @ts-ignore
         setCvData({ ...data, content });
 
-        // Fetch and parse Projects data
-        const projectsUrl = `${baseUrl}/projects.${lang}.tsv`;
-        const projects = await parseProjects(projectsUrl);
+        // Dynamically import the tsv file as a raw text module
+        const projectsModule = await import(`./assets/projects.${lang}.tsv`);
+        const projectsResponse = await fetch(projectsModule.default);
+        const projectsText = await projectsResponse.text();
 
+        const results = Papa.parse(projectsText, {
+            header: true,
+            skipEmptyLines: true,
+        });
+
+        const projects = results.data;
         const categorized = {
             chromeExtensions: [],
             githubProjects: [],
             websites: []
         };
-        projects.filter(p => p.name).forEach(p => {
-            const project = { name: p.name, description: p.description, githubLink: p.githubLink, liveLink: p.liveLink, status: p.status };
-            const typeLower = p.type.toLowerCase();
+        projects.forEach(p => {
+            const project = { name: (p as any).name, description: (p as any).description, githubLink: (p as any).githubLink, liveLink: (p as any).liveLink, status: (p as any).status };
+            const typeLower = (p as any).type.toLowerCase();
             if (typeLower === 'chrome') {
                 // @ts-ignore
                 categorized.chromeExtensions.push(project);
@@ -96,6 +90,7 @@ function App() {
 
       } catch (error) {
         console.error("Failed to fetch data:", error);
+        setCvData(null); // Ensure data is null on error
       } finally {
         setLoading(false);
       }
@@ -112,7 +107,7 @@ function App() {
     return (
       <div className="container text-center mt-5">
         <h1>Error</h1>
-        <p className="lead">Could not load CV data. Please check if the file `public/cv.{lang}.md` exists and is accessible.</p>
+        <p className="lead">Could not load CV data. Please check if the file `src/assets/cv.{lang}.md` exists and is accessible.</p>
       </div>
     );
   }
